@@ -1,0 +1,164 @@
+@font-face {
+    font-family: "Manrope-ExtraBold";
+    src: url(Manrope/static/Manrope-ExtraBold.ttf);
+}
+
+:root {
+    /* Primary colors */
+    --light-cyan: hsl(193, 38%, 86%);
+    --neon-green: hsl(150, 100%, 66%);
+
+    /* Neutral colors */
+    --grayish-blue: hsl(217, 19%, 38%);
+    --dark-grayish-blue: hsl(217, 19%, 24%);
+    --dark-blue: hsl(218, 23%, 16%);
+
+    /* Footer color */
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+
+    /* Font size */
+    font-size: 15px;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow: hidden;
+    background-color: var(--dark-blue); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loading-buffer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--dark-blue);
+    z-index: 1;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-buffer p {
+    font-size: 5rem;
+    text-align: center;
+    color: var(--white);
+}
+
+.loading-buffer span {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    border: 1rem solid var(--grayish-blue);
+    border-top: 1rem solid var(--neon-green);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+main {
+    height: clamp(20rem, 24rem, 28rem);
+    width: clamp(20rem, 24rem, 28rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--dark-grayish-blue);
+    padding: 2.6rem 0.6rem;
+    border-radius: 0.8rem;
+}
+
+.advice {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.advice h1,
+.advice span {
+    font-family: "Manrope-ExtraBold", sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--neon-green);
+    letter-spacing: 0.3rem;
+    justify-content: flex-start;
+}
+
+.advice p {
+    font-family: "Manrope-ExtraBold", sans-serif;
+    font-size: calc(2rem - 6px);
+    color: var(--light-cyan);
+    text-align: center;
+    padding: 2rem 0.8rem;
+}
+
+.advice p::before {
+    content: open-quote;
+}
+
+.advice p::after {
+    content: close-quote;
+}
+
+.random-generator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: clamp(2rem, 4.5rem, 8rem);
+    width: clamp(2rem, 4.5rem, 8rem);
+    background-color: var(--neon-green);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: 0.4s ease-in-out;
+}
+
+.random-generator:hover {
+    cursor: pointer;
+    box-shadow: 0 0 3rem var(--neon-green);
+}
+
+.attribution {
+    width: 100%;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--black);   
+}
+
+.attribution span {
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.attribution span a {
+    color: hsl(228, 45%, 44%); 
+}
+
+@media screen and (min-width: 900px) {
+    main {
+        width: clamp(24rem, 36rem, 40rem);
+    }
+
+    .advice p {
+        font-size: calc(2rem - 2px);
+        padding: 2rem 1.6rem;
+    }
+}
