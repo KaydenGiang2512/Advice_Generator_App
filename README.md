@@ -17,8 +17,8 @@ This is a solution to the [Advice generator app challenge on Frontend Mentor](ht
 
 ### Links
 
-- Solution URL: ()
-- Live Site URL: ()
+- Solution URL: (https://www.frontendmentor.io/solutions/responsive-advice-generator-app-using-html5-css3-and-vanilla-js-DpfQjzz4CW)
+- Live Site URL: (https://kaydengiang2512.github.io/Advice_Generator_App/)
 
 ## My process
 
